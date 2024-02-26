@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title %}
+Sign In
+{% endblock %}
+
+{% block content %}
+<style>
+    .form-control{
+    margin-bottom:3%;
+    }
+    .btn:hover{
+    box-shadow:2px 2px green;
+    }
+</style>
+<div class="col-sm-lg text-center fs-2  my-3" style="font-weight:bold; color:#e6c563;">Log In </div>
+<div class="col-lg-4 mb-5 mx-auto">
+    <form method="post">
+        {% csrf_token %}
+        <span class="fs-4">Username </span> <input type="text" name="username" placeholder="Username" class="form-control ">
+        <span class="fs-4">Password </span>   <input type="password" name="passwd" placeholder="Password" class="form-control ">
+        <div class="text-center mt-4">
+        <input type="submit"  value="Login" class="form-control btn btn-sm " style="min-height:40px; background:#e6c563 !important; max-width:500px;">
+    </div></form>
+</div>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title %}
+Details
+{% endblock %}
+
+{% block content %}
+<style>
+    .form-control{
+    margin-bottom:2%;
+    }
+    #dv{
+    display:none;
+    }
+</style>
+<script>
+    function demo()
+    {
+    document.getElementById("dv").style.display="block";
+    }
+    function demo1()
+    {
+    alert('Your Ticket is Booked .');
+    }
+</script>
+<div class="text-center  fs-1 mt-3"style="font-weight:bold; color:#e6c563;">More Information</div>
+<div class="row">
+    {% for i in abc %}
+    <div class="col-lg-10 my-4 p-3 mx-auto">
+<div class="card mb-3 p-4"style="background:lightyellow;" >
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="/{{i.epic}}" style="height:330px;" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-7 mx-4 txt">
+      <div class="card-body">
+        <h1 class="card-title" style=" color:rgba(255, 152, 0, 0.3); ">{{i.eday}}</h1>
+        <h5>{{i.emonth}}  {{i.eyear}}</h5>
+          <h5>{{i.etime}}</h5>
+          <h5>{{i.eplace}}  </h5>
+          <h5>{{i.ecity}}</h5>
+          <h5>{{i.ehead}}</h5>
+          <h5>You are all welcome in this grand event.</h5>
+          <a href="#" onclick="demo()"  class="bg-danger btn btn-md my-2">Book Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+    {% endfor %}
+    </div>
+
+<div class="row my-2" id="dv">
+    <div class="col-6 mx-auto">
+
+<form class="my-3" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    Name <input type="text" name="name" required  placeholder="Name" class="form-control">
+    Mobile No <input type="text" name="mob" required  placeholder="Mobile No" class="form-control">
+     Picture <input type="file" name="pic" required class="form-control">
+    Address <input type="text" name="address" required placeholder="Address" class="form-control">
+    Gender <input type="text" name="gender" required placeholder="Address" class="form-control">
+    Email <input type="email" required name="email" class="form-control">
+    Date <input type="datetime-local" required name="date" class="form-control">
+        <div class="text-center">
+    <A HREF="#" onclick="demo1()">
+        <INPUT TYPE="submit" style="width:300px; " value="Book" class="form-control text-light bg-success mx-2 btn btn-sm p-2 ">
+        </A>
+    <INPUT TYPE="reset" value="Reset"  style="width:300px; BACKGROUND:lightyellow;" class="form-control text-light btn bg-danger btn-sm mx-2 p-2">
+            </div>
+</form>
+
+    </div>
+</div>
+{% endblock %}

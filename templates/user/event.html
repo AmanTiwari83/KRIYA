@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title %}
+Events
+{% endblock %}
+
+{% block content %}
+<div class="row ">
+    <div class="col-sm-lg text-center fs-2  mt-3" style="font-weight:bold; color:#e6c563;">Upcoming Events </div>
+            <div class="col-sm-9 mx-auto">
+                <div class="row" style="padding-left:65px;">
+            {% for x in nevent %}
+            <div class="col-lg-6  col-md-12 my-4" >
+                <div class="card" style="width: 500px;">
+  <img src="/{{x.epic}}" class="card-img-top " alt="..." height="400px" width="400px">
+  <div class="card-body">
+    <div class="txt py-2 px-1" style="height:86px; background:#e6c563; margin:-16px; width:107%;">
+        <div class="row">
+            <div class="col-2"><div style="height:70px; width:80px;  background:white; margin-left:-4px; padding:6px 0px 0px 0px; color:rgba(255, 152, 0, 0.3); ">
+                <div class="txt text-center fs-1">{{ x.eday }}</div>
+
+            </div> </div>
+            <P class="col-sm-10 txt" STYLE="font-size:15px;">{{ x.emonth }} {{ x.eyear }}<BR>10:00 AM  <BR> {{ x.eplace }} , {{ x.ecity }}</P>
+        </div>
+    </div>
+      <div style="height:70px; width:107%;  padding-top:30px;" class="txt fs-3  px-4">{{ x.ehead }}</div>
+      <div style="height:50px; width:107%;  padding-top:10px;" class="txt fs-3  px-4">
+          <a href="/details?msg={{x.id}}" class="btn btn-bg rounded-pills bg-danger">More Info</a> </div>
+      <div></div>
+
+  </div>
+</div>
+            </div>
+
+{% endfor %}
+
+
+                </div>
+        </div>
+ </div>
+{% endblock %}

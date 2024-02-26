@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title %}
+Contact Us
+{% endblock %}
+
+{% block content %}
+<style>
+    .form-control{
+    margin-bottom:3%;
+    }
+</style>
+<div class="col-sm-lg text-center fs-1  my-3" style="font-weight:bold; color:#e6c563;">Contact Us </div>
+<div class="col-lg-10 mx-auto">
+<div class="row">
+    <div class="col-lg-6 col-md-12">
+        <form method="post">
+            {% csrf_token %}
+            Name <input type="text" name="name" placeholder="Name" class="form-control" required>
+            Email <input type="email" name="email" placeholder="Email" class="form-control">
+            Contact No <input type="number" name="contact" required placeholder="Contact" class="form-control">
+            Address <textarea  style="resize:fixed;" name="add"  placeholder="Address" class="form-control"></textarea>
+            Message <textarea name="message" placeholder="Enter your message" style="resize:fixed;" class="form-control"></textarea>
+            <div class=" text-center"> <input type="submit" value="Save" class="form-control btn btn-sm  p-2 text-center"  style="max-width:300px;  background:#e6c563;  margin-left:4%; text-align:center;">
+       </div> </form>
+    </div>
+    <div class="col-lg-6 col-sm-12 pt-4" >
+        <img src="{%static 'images/oip.jpeg'%}" class="img-fluid" style="background-size:cover; min-height:400px;">
+    </div>
+</div>
+    </div>
+{% endblock %}

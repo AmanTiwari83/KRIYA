@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title %}
+My Profile
+{% endblock %}
+
+{% block content %}
+<div class="col-sm-lg text-center fs-1  my-3" style="font-weight:bold; color:#e6c563;">My Profile </div>
+<div class="col-4 text-center my-4" style="border:4px solid #d4ad76; min-height:100px; width:500px; margin:0px auto;">
+<div class=" fs-2 text-center my-3" style="font-weight:bold;">
+    Aman Tiwari<br>
+    <img src="{% static 'images/aman.jpg'%}" style=" transform:translateX(0px); height:200px; width:200px; border-radius:50%; border:5px solid #e6c563; box-shadow:5px 5px 20px #e6c563;" class="my-4">
+    <br>
+    <div class="fs-5" style="line-height:20px;">Email : <A HREF="mailto:amantiwari3022@gmail.com" style="text-decoration:none; color:black;">amantiwari30222@gmail.com</A> <br><BR>
+        College Name : <span style="font-weight:800"> MMIT SKN</span><BR><br>
+        Mob No : <a href="tel:+91 8303362534" style="text-decoration:none; color:black;">+91 8303362534</a> <BR><BR>
+        Address : Khalilabad , Sant Kabir Nagar<br>    <br>
+        Technology : <span style="font-weight:800"> Python with Django</span><br><br>
+        DOB : 22/06/2004<BR><BR>
+        Qualification : <span style="font-weight:800"> 10<sup>th</sup> , 12<sup>th</sup> , Diploma in CSE , B.A </span><BR><br>
+
+        </div>
+</div>
+    </div>
+{% endblock %}

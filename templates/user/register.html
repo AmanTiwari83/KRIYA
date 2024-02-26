@@ -1,0 +1,36 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+<style>
+    .form-control{
+    margin-bottom:3%;
+    }
+</style>
+<div class="col-10 mx-auto text-center fs-2  my-3" style="font-weight:bold; color:#e6c563;">Register </div>
+<div class="row">
+    <div class="col-10 mx-auto">
+
+
+    <div class="col-lg-6 mx-auto">
+        <form  method="post"  enctype="multipart/form-data">
+            {% csrf_token %}
+        Name   <input type="text" name="name" required placeholder="Name" class="form-control">
+        Email  <input type="email" name="email" required placeholder="Email" class="form-control">
+        Password  <input type="password" name="password" required placeholder="Password" class="form-control">
+        Contact No  <input type="number" name="contact" placeholder="Contact" class="form-control">
+        Picture  <input type="file" name="pic" class="form-control" required>
+        Address  <input type="text" name="address" placeholder="Address" class="form-control">
+        <input type="submit" value="Save" class="form-control btn btn-sm  p-2 text-center" style="max-width:100px; background:#e6c563; max-height:100px;">
+            <input type="reset" value="Reset" class="form-control btn btn-sm  p-2 text-center"  style="max-width:100px;  background:#e6c563;  margin-left:4%; text-align:center;">
+            </form>
+    </div>
+
+        </div>
+        </div>
+
+{% endblock %}
